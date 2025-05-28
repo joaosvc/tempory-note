@@ -1,5 +1,6 @@
 import { CopyButtonWrapper } from "./copy-button";
 
+// @ts-ignore
 export default async function NotePage({ params }: { params: { id: string } }) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
   const res = await fetch(`${baseUrl}/api/note/get/${params.id}`, {
