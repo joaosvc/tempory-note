@@ -16,8 +16,8 @@ export function CopyButtonWrapper({ text }: { text: string }) {
                     fontWeight: '600',
                 },
             });
-        } catch (err) {
-            toast.error('Erro ao copiar!');
+        } catch (error: any) {
+            toast.error(`Erro ao copiar! ${error.message}`);
         }
     };
 
