@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+
+*,
+*::before,
+*::after {
+  outline: 0;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-horizontal,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-horizontal,
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb-horizontal,
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb-horizontal {
+  border-radius: 6px;
+  width: 0.6rem;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb-horizontal {
+  background: rgb(55, 65, 81);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

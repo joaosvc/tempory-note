@@ -31,9 +31,9 @@ export default function Home() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
-        <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Gerador de Texto</h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 w-full max-w-md">
+        <h1 className="text-2xl font-semibold text-gray-800 dark:text-gray-100  mb-6 text-center">Gerador de Texto</h1>
 
         <div className="flex flex-col gap-4">
           <textarea
@@ -42,7 +42,7 @@ export default function Home() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Digite algo..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-y text-base min-h-[200px]"
+            className="w-full px-4 py-3 text-gray-700 dark:text-gray-100 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-y text-base min-h-[200px]"
           />
           <button
             onClick={handleGenerate}
@@ -52,7 +52,7 @@ export default function Home() {
           </button>
 
           {link && (
-            <div className="mt-2 flex flex-row space-x-2 justify-center">
+            <div className="mt-2 flex flex-row space-x-2 justify-center text-gray-700 dark:text-gray-100">
               <span>Seu link:</span>
               <a
                 href={link}
