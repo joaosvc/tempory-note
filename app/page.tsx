@@ -21,7 +21,7 @@ export default function Home() {
       if (!response.ok) {
         throw new Error(data.message);
       }
-      
+
       const fullLink = `${window.location.origin}/${data.id}`;
       setLink(fullLink);
     } catch (error: any) {
@@ -37,11 +37,12 @@ export default function Home() {
 
         <div className="flex flex-col gap-4">
           <textarea
-            rows={4}
+            rows={6}
+            autoFocus
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Digite algo..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none text-base"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-y text-base min-h-[200px]"
           />
           <button
             onClick={handleGenerate}
@@ -54,11 +55,11 @@ export default function Home() {
             <div className="mt-2 flex flex-row space-x-2 justify-center">
               <span>Seu link:</span>
               <a
-              href={link}
-              className="text-blue-600 underline text-center hover:text-blue-800 transition"
-            >
-              {link}
-            </a>
+                href={link}
+                className="text-blue-600 underline text-center hover:text-blue-800 transition"
+              >
+                {link}
+              </a>
             </div>
           )}
         </div>

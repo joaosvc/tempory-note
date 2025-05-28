@@ -1,5 +1,4 @@
 import { CopyButtonWrapper } from "./copy-button";
-
 // @ts-ignore
 export default async function NotePage({ params }: { params: { id: string } }) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? '';
@@ -16,7 +15,7 @@ export default async function NotePage({ params }: { params: { id: string } }) {
         <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Nota Temporaria</h1>
         {content ? (
           <>
-            <pre className="bg-gray-50 p-4 border border-gray-200 rounded-xl text-gray-700 whitespace-pre-wrap mb-4">
+            <pre className="bg-gray-50 p-4 border border-gray-200 rounded-xl text-gray-700 whitespace-pre-wrap break-words mb-4 max-h-[400px] overflow-auto text-sm">
               {content}
             </pre>
             <CopyButtonWrapper text={content} />
