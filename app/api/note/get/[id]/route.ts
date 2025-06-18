@@ -1,12 +1,20 @@
 import { NextResponse } from 'next/server';
-import { getText } from '@/lib/store';
+import PrismaClient from "@/client/prisma";
 
 export async function GET(_: Request, { params }: { params: { id: string } }) {
-    const text = getText(params.id);
+    const id = params.id;
 
-    if (!text) {
-        return NextResponse.json({ error: 'Texto não encontrado' }, { status: 404 });
+    if (!id) {
+        return NextResponse.json({ error: "ID ausente" }, { status: 400 });
     }
 
-    return NextResponse.json({ content: text });
+    const data = await PrismaClient.sharedContent.findUnique({
+        where: { id }
+    });
+
+    if (!data) {
+        return NextResponse.json({ error: "Conteúdo não encontrado" }, { status: 404 });
+    }
+
+    return NextResponse.json({ content: data.content });
 }
